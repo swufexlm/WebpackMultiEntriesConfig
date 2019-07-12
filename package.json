@@ -78,7 +78,8 @@
     "@types/react-redux": "^6.0.2",
     "@types/react-router": "^4.0.26",
     "@types/request": "^2.47.1",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "url-parse": "^1.4.3"
   },
   "jest": {
     "collectCoverageFrom": [
