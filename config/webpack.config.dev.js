@@ -31,7 +31,6 @@ const entries = {
     ...paths.appIndexJsObj
 };
 
-// 组件打包
 if (paths.componentsPath) {
     entries['components'] = paths.componentsPath;
 }
@@ -45,7 +44,12 @@ for (const key in paths.appIndexJsObj) {
             filename: key + '/index.html',
             chunks: ['polyfills', 'webpackHotDevClient', 'components', key],
             chunksSortMode: function(chunk1, chunk2) {
-                var order = ['polyfills', 'vendor', 'components', key];
+                var order = [
+                    'polyfills',
+                    'webpackHotDevClient',
+                    'components',
+                    key
+                ];
                 var order1 = order.indexOf(chunk1.names[0]);
                 var order2 = order.indexOf(chunk2.names[0]);
                 return order1 - order2;
